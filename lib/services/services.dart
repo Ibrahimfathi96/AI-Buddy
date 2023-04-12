@@ -2,7 +2,7 @@ import 'package:chatgpt_application/constants/constants.dart';
 import 'package:chatgpt_application/views/widgets/drop_down.dart';
 import 'package:chatgpt_application/views/widgets/text_widget.dart';
 import 'package:flutter/material.dart';
-
+//apiKey = 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
 class Services {
   static Future<void> showModalSheet({
     required BuildContext context,

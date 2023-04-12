@@ -1,6 +1,7 @@
 import 'dart:developer';
 
 import 'package:chatgpt_application/constants/constants.dart';
+import 'package:chatgpt_application/services/api_services.dart';
 import 'package:chatgpt_application/services/assets_manager.dart';
 import 'package:chatgpt_application/services/services.dart';
 import 'package:chatgpt_application/views/widgets/chat_widget.dart';
@@ -83,8 +84,12 @@ class _HomeViewState extends State<HomeView> {
                         child: TextField(
                           style: const TextStyle(color: Colors.white),
                           controller: textEditingController,
-                          onSubmitted: (value) {
-                            // TODO: send message function
+                          onSubmitted: (value) async {
+                            try {
+                              await ApiServices.getModels();
+                            } on Exception catch (e) {
+                              debugPrint(" $e");
+                            }
                           },
                           decoration: const InputDecoration.collapsed(
                             hintText: 'How Can I Help You?',
