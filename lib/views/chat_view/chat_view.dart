@@ -1,5 +1,8 @@
+import 'dart:developer';
+
 import 'package:chatgpt_application/constants/constants.dart';
 import 'package:chatgpt_application/services/assets_manager.dart';
+import 'package:chatgpt_application/services/services.dart';
 import 'package:chatgpt_application/views/widgets/chat_widget.dart';
 import 'package:chatgpt_application/views/widgets/text_widget.dart';
 import 'package:flutter/material.dart';
@@ -35,30 +38,7 @@ class _HomeViewState extends State<HomeView> {
         actions: [
           IconButton(
               onPressed: () async {
-                await showModalBottomSheet(
-                  backgroundColor: scaffoldBackgroundColor,
-                  shape: const RoundedRectangleBorder(
-                    borderRadius: BorderRadius.vertical(
-                      top: Radius.circular(20),
-                    ),
-                  ),
-                  context: context,
-                  builder: (context) {
-                    return Padding(
-                      padding: const EdgeInsets.all(18.0),
-                      child: Row(
-                        children: const [
-                          Flexible(
-                            child: TextWidget(
-                              label: 'Choose Model',
-                              fontSize: 16,
-                            ),
-                          ),
-                        ],
-                      ),
-                    );
-                  },
-                );
+                await Services.showModalSheet(context: context);
               },
               icon: const Icon(
                 Icons.more_vert_outlined,
