@@ -1,11 +1,9 @@
-import 'dart:developer';
 
 import 'package:chatgpt_application/constants/constants.dart';
 import 'package:chatgpt_application/services/api_services.dart';
 import 'package:chatgpt_application/services/assets_manager.dart';
 import 'package:chatgpt_application/services/services.dart';
 import 'package:chatgpt_application/views/widgets/chat_widget.dart';
-import 'package:chatgpt_application/views/widgets/text_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 
