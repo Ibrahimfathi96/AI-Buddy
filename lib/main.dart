@@ -1,3 +1,4 @@
+import 'package:chatgpt_application/constants/constants.dart';
 import 'package:chatgpt_application/views/chat_view/chat_view.dart';
 import 'package:flutter/material.dart';
 
@@ -11,7 +12,13 @@ class ChatGptApplication extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: HomeView(),
+      home: const HomeView(),
+      theme: ThemeData(
+        scaffoldBackgroundColor: scaffoldBackgroundColor,
+        appBarTheme: AppBarTheme(
+          color: cardColor,
+        ),
+      ),
     );
   }
 }
