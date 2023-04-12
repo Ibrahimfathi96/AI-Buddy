@@ -1,3 +1,4 @@
+import 'package:chatgpt_application/views/chat_view/chat_view.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -9,16 +10,9 @@ class ChatGptApplication extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: HomeView(),
     );
   }
 }
 
-class HomeView extends StatelessWidget {
-  const HomeView({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold();
-  }
-}
