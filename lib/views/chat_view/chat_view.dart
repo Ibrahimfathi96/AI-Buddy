@@ -1,6 +1,7 @@
 import 'package:chatgpt_application/constants/constants.dart';
 import 'package:chatgpt_application/services/assets_manager.dart';
 import 'package:chatgpt_application/views/widgets/chat_widget.dart';
+import 'package:chatgpt_application/views/widgets/text_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 
@@ -33,7 +34,32 @@ class _HomeViewState extends State<HomeView> {
       appBar: AppBar(
         actions: [
           IconButton(
-              onPressed: () {},
+              onPressed: () async {
+                await showModalBottomSheet(
+                  backgroundColor: scaffoldBackgroundColor,
+                  shape: const RoundedRectangleBorder(
+                    borderRadius: BorderRadius.vertical(
+                      top: Radius.circular(20),
+                    ),
+                  ),
+                  context: context,
+                  builder: (context) {
+                    return Padding(
+                      padding: const EdgeInsets.all(18.0),
+                      child: Row(
+                        children: const [
+                          Flexible(
+                            child: TextWidget(
+                              label: 'Choose Model',
+                              fontSize: 16,
+                            ),
+                          ),
+                        ],
+                      ),
+                    );
+                  },
+                );
+              },
               icon: const Icon(
                 Icons.more_vert_outlined,
                 color: Colors.white,
@@ -51,7 +77,11 @@ class _HomeViewState extends State<HomeView> {
           children: [
             Expanded(
               child: ListView.builder(
-                itemBuilder: (context, index) => const ChatWidget(),
+                itemBuilder: (context, index) => ChatWidget(
+                  chatIndex:
+                      int.parse(chatMessages[index]['chatIndex'].toString()),
+                  msg: chatMessages[index]['msg'].toString(),
+                ),
                 itemCount: 6,
               ),
             ),
