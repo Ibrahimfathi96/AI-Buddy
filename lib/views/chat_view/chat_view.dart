@@ -1,5 +1,6 @@
 import 'package:chatgpt_application/constants/constants.dart';
 import 'package:chatgpt_application/services/assets_manager.dart';
+import 'package:chatgpt_application/views/widgets/chat_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 
@@ -50,8 +51,7 @@ class _HomeViewState extends State<HomeView> {
           children: [
             Expanded(
               child: ListView.builder(
-                itemBuilder: (context, index) =>
-                    const Text('this is a test text'),
+                itemBuilder: (context, index) => const ChatWidget(),
                 itemCount: 6,
               ),
             ),
