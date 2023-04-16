@@ -1,5 +1,4 @@
 import 'dart:convert';
-import 'dart:developer';
 import 'dart:io';
 import 'package:chatgpt_application/constants/api_consts.dart';
 import 'package:chatgpt_application/models/model.dart';
@@ -22,7 +21,7 @@ class ApiServices {
       List temp = [];
       for (var value in jsonResponse['data']) {
         temp.add(value);
-        log("temp ${value["id"]}");
+        debugPrint("temp ${value["id"]}");
       }
       return ModelsModel.modelsFromSnapshot(temp);
     } catch (ex) {

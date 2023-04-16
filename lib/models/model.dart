@@ -8,7 +8,8 @@ class ModelsModel {
     required this.root,
   });
 
-  factory ModelsModel.fromJson(Map<String, dynamic> json) => ModelsModel(
+  factory ModelsModel.fromJson(Map<String, dynamic> json) => 
+  ModelsModel(
         created: json['created'],
         id: json['id'],
         root: json['root'],

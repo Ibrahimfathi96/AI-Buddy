@@ -45,7 +45,7 @@ class _HomeViewState extends State<HomeView> {
               ))
         ],
         elevation: 2,
-        title: const Text('ChatGPT'),
+        title: const Text('AI Buddy'),
         leading: Padding(
           padding: const EdgeInsets.all(8.0),
           child: Image.asset(AssetsManager.openaiLogo),
